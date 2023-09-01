@@ -6,7 +6,6 @@ provider "aws" {
 
 locals {
   region            = var.region
-  name              = var.name
   vpc_name          = var.vpc_name
   vpc_cidr          = var.vpc_cidr
   vpc_id            = var.vpc_id

@@ -39,14 +39,17 @@ Using VPC Endpoints requires the use of a Network Load Balancer or a Gatway Load
 # Example extra_vars.tfvars file
 ```hcl
 region            = "us-east-1"
-name              = "adroit"
-vpc_name          = "adroit-example-project-vpc" # or use existing project vpc name
-vpc_cidr          = ["10.0.0.0/16"]              # or use existing project vpc_cidr
+vpc_name          = "adroit-example-project-vpc" # must use an existing project vpc name
+vpc_cidr          = ["10.0.0.0/16"]              # must use an existing project vpc_cidr
 vpc_id            = "vpc-0abd21e85991bfdd0"      # must use an existing project vpc_id
-private_subnet_id = "subnet-0af4bc02c9223b72b"   # must use anexisting project private_subnet_id
+private_subnet_id = "subnet-0af4bc02c9223b72b"   # must use an existing project private_subnet_id
+
 
 # 10.0.10.0/24 Private Subnet A, 10.0.20.0/24 Private Subnet B, 10.0.30.0/24 Private Subnet C
-private_subnet_ids = ["subnet-0af4bc02c9223b72b", "subnet-0d2426210aa29466a", "subnet-001250f0522fbdc29"] # also must replace these with existing subnets in different AZs. 
+# also must replace these with existing subnets in different AZs. 
+private_subnet_ids = ["subnet-0af4bc02c9223b72b", "subnet-0d2426210aa29466a", "subnet-001250f0522fbdc29"] 
+
+
 tags = {
   project     = "adroit",
   environment = "dev"
